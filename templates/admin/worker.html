@@ -1,0 +1,42 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <p>workers</p>
+  <table width="200" border="1" class="table table-bordered">
+    <tr>
+      <th scope="row">#</th>
+      <td>user name</td>
+      <td>contact</td>
+      <td>Experience</td>
+      <td>Age</td>
+      <td>ID card</td>
+      <td>Email ID</td>
+      <td></td>
+      <td></td>
+    </tr>
+      {% for i in data  %}
+      <tr>
+           <td>{{ forloop.counter }}</td>
+      <td>{{ i.name }}</td>
+          <td>{{ i.phone}}</td>
+          <td>{{ i.experience}}</td>
+          <td>{{ i.age }}</td>
+          <td>{{ i.IDproof }}</td>
+          <td>{{ i.email }}</td>
+          <td><a href="http://google.com/maps/?q={{ i.lattitude }},{{ i.longitude }}" >locate</a></td>
+          <td><a href="/Approveworkers/{{ i.LOGIN.id }}">Approve</a><br><a href="/Rejectworkers/{{ i.LOGIN.id }}">Reject</a> </td>
+      </tr>
+  {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

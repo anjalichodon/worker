@@ -1,0 +1,38 @@
+{% extends 'worker/worker_index.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/update_service_post/{{ data1.id }}">
+{% csrf_token %}
+  <table width="314" border="1" class="table table-bordered">
+    <tr>
+      <th width="171" scope="row">category</th>
+      <td width="127"><label for="select"></label>
+        <select name="select" id="select">
+            {% for i in data %}
+                <option value="{{ i.id }}" {% if data1.CATEGORY.id == i.id %}selected{% endif %}>{{ i.name }}</option>
+            {% endfor %}
+      </select></td>
+    </tr>
+  <tr>
+      <th scope="row">service</th>
+<td> <input type="text" name="textfield2" id="textfield2" value="{{ data1.service }}" /></td>tr>
+    <tr>
+      <th scope="row">Amount</th>
+      <td> <input type="text" name="textfield"  value="{{ data1.amount }}" id="textfield" /></td>
+    </tr>
+    <tr>
+      <td align="center" colspan="2" scope="row"><input type="submit" name="ADD" id="ADD" value="update" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

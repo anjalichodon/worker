@@ -1,0 +1,243 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+
+
+<!DOCTYPE html>
+<html>
+
+<!-- Head -->
+<head>
+
+<title>Natural Signin Form A Flat Responsive Widget Template :: W3layouts</title>
+
+<!-- Meta-Tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="Natural Signin Form Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //Meta-Tags -->
+
+<!-- Style --> <link rel="stylesheet" href="/static/login_temp/css/style.css" type="text/css" media="all">
+
+<!-- Fonts -->
+<link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+<!-- //Fonts -->
+
+</head>
+<!-- //Head -->
+
+<!-- Body -->
+<body>
+<div class="banner">
+<div class="agileinfo-dot">
+	<h1>NATURAL SIGNIN FORM</h1>
+
+	<div class="w3layoutscontaineragileits">
+	<h2>Sign In</h2>
+
+<form action="/register_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    {% csrf_token %}
+  <table width="345" border="1">
+    <tr>
+      <th width="174" scope="row">Name</th>
+      <td width="155"><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" required/></td>
+    </tr>
+       <tr>
+      <th scope="row">Age</th>
+      <td><label for="textfield8"></label>
+      <input type="number" name="textfield8" id="textfield8" required max="2006-12-31" /></td>
+    </tr>
+
+    <tr>
+      <th scope="row">Experience</th>
+      <td><label for="textfield4"></label>
+      <input type="text" name="textfield4" id="textfield4" required /></td>
+    </tr>
+    <tr>
+      <th scope="row">ID proof</th>
+      <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField" required/></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td><label for="textfield5"></label>
+      <input type="hidden" name="textfield5" id="textfield2" /></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td><label for="textfield6"></label>
+      <input type="hidden" name="textfield6" id="textfield3" /></td>
+    </tr>
+        <tr>
+
+            <td colspan="2"><div align="center" id="gmap"></div><br></td>
+        </tr>
+       <tr>
+      <th scope="row">Email</th>
+      <td><label for="textfield2"></label>
+      <input type="email" name="textfield2"  required/></td>
+    </tr>
+    <tr>
+      <th scope="row">Phone</th>
+      <td><label for="textfield3"></label>
+      <input type="text" name="textfield3"  required pattern="[6-9][0-9]{9}" maxlength="10"/></td>
+    </tr>
+    <tr>
+      <th scope="row">Password</th>
+      <td><label for="textfield7"></label>
+      <input type="text" name="textfield7" id="textfield7" /></td>
+    </tr>
+
+    <tr>
+      <th height="36" colspan="2" scope="row"><input type="submit" name="Register" id="Register" value="Submit" /></th>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</form>
+<div>
+            <br>
+            <a href="/"><font color="white">Have an account signin now?</font> </a>
+        </div>
+	</div>
+
+
+	<div class="w3footeragile">
+		<p> &copy; 2017 Natural Signin Form. All Rights Reserved | Design by <a href="http://w3layouts.com" target="_blank">W3layouts</a></p>
+	</div>
+
+</div>
+</div>
+
+
+
+
+</body>
+<!-- //Body -->
+
+</html>
+
+ <style type="text/css">
+html { height: 100% }
+body { height: 100%; margin: 0; padding: 0 }
+#map_canvas { height: 100% }
+</style>
+
+<script type="text/javascript"
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6v5-2uaq_wusHDktM9ILcqIrlPtnZgEk&sensor=false">
+</script>
+<script type="text/javascript">
+
+    var map;
+        function initialize() {
+            var myLatlng = new google.maps.LatLng(11.618061975930,75.36565089010);
+            var myOptions = {
+                zoom:7,
+                center: myLatlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            map = new google.maps.Map(document.getElementById("gmap"), myOptions);
+            // marker refers to a global variable
+            marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map
+            });
+
+            google.maps.event.addListener(map, "click", function(event) {
+                // get lat/lon of click
+                var clickLat = event.latLng.lat();
+                var clickLon = event.latLng.lng();
+
+                // show in input box
+                document.getElementById("textfield2").value = clickLat.toFixed(5);
+                document.getElementById("textfield3").value = clickLon.toFixed(5);
+
+{#                  var marker = new google.maps.Marker({#}
+{#                        position: new google.maps.LatLng(clickLat,clickLon),#}
+{#                        map: map#}
+{#                     });#}
+            });
+    }
+
+    window.onload = function () { GetMylocation() };
+
+
+</script>
+     <style>
+ div#gmap {
+
+        width: 150%;
+        height: 200px;
+        border:double;
+ }
+    </style>
+
+{#    <form id="form1" runat="server">#}
+<center>
+<!-- MAP HOLDER -->
+
+<!-- REFERENCES -->
+{#Lat: <input type="text" id='lat'>#}
+{#Lon: <input type="text" id='lon'>#}
+
+</center>
+
+
+
+
+<script>
+
+function GetMylocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    //x.innerHTML = "Geolocation is not supported by this browser.";
+      alert("Geolocation is not supported by this browser.")
+  }
+}
+var x1 = document.getElementById("textfield2");
+var x2 = document.getElementById("textfield3");
+var map;
+function showPosition(position) {
+  x1.value=position.coords.latitude;
+  x2.value=position.coords.longitude;
+
+  var myLatlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+            var myOptions = {
+                zoom:14,
+                center: myLatlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            map = new google.maps.Map(document.getElementById("gmap"), myOptions);
+            // marker refers to a global variable
+            marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map
+            });
+
+            google.maps.event.addListener(map, "click", function(event) {
+                // get lat/lon of click
+                var clickLat = event.latLng.lat();
+                var clickLon = event.latLng.lng();
+
+                // show in input box
+                document.getElementById("textfield2").value = clickLat.toFixed(5);
+                document.getElementById("textfield3").value = clickLon.toFixed(5);
+
+{#                  var marker = new google.maps.Marker({#}
+{#                        position: new google.maps.LatLng(clickLat,clickLon),#}
+{#                        map: map#}
+{#                     });#}
+            });
+
+
+}
+</script>

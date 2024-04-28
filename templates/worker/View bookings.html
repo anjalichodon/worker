@@ -1,0 +1,38 @@
+{% extends 'worker/worker_index.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="451" border="1" class="table table-bordered">
+    <tr>
+      <th width="12" scope="col">#</th>
+      <th width="12" scope="col">Service Info</th>
+      <th width="96" scope="col">User Info</th>
+      <th width="96" scope="col">payment_status</th>
+        <th width="96" scope="col"></th>
+    </tr>
+     {% for i in data %}
+    <tr>
+
+      <td>{{ forloop.counter }}</td>
+      <td>{{ i.SERVICE.service }}<br>{{ i.SERVICE.amount }}</td>
+      <td>{{ i.USER.username }}<br>{{ i.USER.phone }}<br>{{ i.USER.email }}</td>
+      <td>{{ i.payment_status }}</td>
+        <td><a href="/approve_booking/{{ i.id }}">Approve</a><br><a href="/reject_booking/{{ i.id }}">Reject</a>
+{#        <a href="/View_payment/{{ i.id }}">View payment</a>#}
+
+        </td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}
